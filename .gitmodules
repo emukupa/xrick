@@ -1,0 +1,9 @@
+[submodule "zlib"]
+	path = zlib
+	url = https://github.com/emscripten-ports/zlib.git
+[submodule "SDL2"]
+	path = SDL2
+	url = https://github.com/emscripten-ports/SDL2.git
+[submodule "SDL"]
+	path = SDL
+	url = https://github.com/spurious/SDL-mirror.git
