@@ -4,6 +4,9 @@ project(xrick)
 
 set(ZLIB_EXAMPLE OFF)
 set(ZLIB_MINIGZIP OFF)
+set(ZLIB_SHARED OFF)
+set(SKIP_INSTALL_LIBRARIES ON)
+set(SKIP_INSTALL_ALL ON)
 add_subdirectory(zlib)
 set(ZLIB_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/zlib" "${CMAKE_BINARY_DIR}/zlib")
 
@@ -13,6 +16,7 @@ set(RPATH OFF)
 set(SDL_DLOPEN OFF)
 set(SSE OFF)
 set(PTHREADS OFF)
+set(SDL_SHARED OFF)
 add_subdirectory(SDL)
 set(SDL_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/SDL/include" "${CMAKE_BINARY_DIR}/SDL/include")
 
@@ -28,5 +32,5 @@ endif()
 
 add_executable(xrick ${sourceFiles})
 
-target_link_libraries(xrick SDL-static)
-target_link_libraries(xrick zlib)
+target_link_libraries(xrick SDL-static SDLmain)
+target_link_libraries(xrick zlibstatic)
